@@ -1,0 +1,24 @@
+<section class="container mt-5 mb-5 p-5 shadow">
+  <section
+    class="d-flex flex-row justify-content-between align-items-center gap-3"
+  >
+    <input
+      #toDoEle
+      type="text"
+      class="form-control"
+      placeholder="Enter Taks"
+      (keydown)="enterValueToToDo($event)"
+    />
+    <button class="btn btn-primary text-nowrap" (click)="addToDo(toDoEle)">
+      Add Todo
+    </button>
+  </section>
+  <hr />
+  <section style="height: 50vh" class="overflow-auto">
+    <div *ngFor="let todo of toDos">
+      <p class="p-3 m-0 bg-light border-2 border-bottom border-info">
+        {{ todo }}
+      </p>
+    </div>
+  </section>
+</section>
