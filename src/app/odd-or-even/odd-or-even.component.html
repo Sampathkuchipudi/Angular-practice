@@ -1,35 +1,18 @@
 <section class="mt-5 p-5 container d-flex flex-column shadow">
   <input
-    #enteredValue
-    (keydown)="enterNumber($event)"
+    (keydown)="onEnterPress($event)"
+    [(ngModel)]="value"
     type="number"
     class="form-control"
     placeholder="Enter Any Number"
     autofocus
   />
   <br />
-  <div class="d-flex flex-row justify-content-around">
-    <button
-      class="btn btn-success btn-block"
-      (click)="addNumberToList(+enteredValue.value, enteredValue)"
-    >
-      Add
-    </button>
-    <button class="btn btn-danger btn-block" (click)="clear()">Remove</button>
-  </div>
+  <app-addremove
+    (add)="addNumberToList()"
+    (clearData)="clear()"
+  ></app-addremove>
 
   <hr />
-  <section class="overflow-auto" style="height: 50vh">
-    <div *ngFor="let i of numberArray">
-      <p
-        [ngClass]="{
-          'alert-success border-success': i % 2 === 0,
-          'alert-danger border-danger': i % 2 !== 0
-        }"
-        class="p-3 m-0 border-2 border-bottom"
-      >
-        {{ i }}
-      </p>
-    </div>
-  </section>
+  <app-odelist [numberList]="numberArray"></app-odelist>
 </section>

@@ -1,0 +1,13 @@
+<section class="overflow-auto" style="height: 50vh">
+  <div *ngFor="let i of numberList">
+    <p
+      [ngClass]="{
+        'alert-success border-success': i % 2 === 0,
+        'alert-danger border-danger': i % 2 !== 0
+      }"
+      class="p-3 m-0 border-2 border-bottom"
+    >
+      {{ i }}
+    </p>
+  </div>
+</section>

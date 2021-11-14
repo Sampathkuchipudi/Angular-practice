@@ -7,18 +7,15 @@
       type="text"
       class="form-control"
       placeholder="Enter Taks"
-      (keydown)="enterValueToToDo($event)"
+      [(ngModel)]="todoItem"
+      (keydown)="onEnterPress($event)"
     />
-    <button class="btn btn-primary text-nowrap" (click)="addToDo(toDoEle)">
+    <button class="btn btn-primary text-nowrap" (click)="addToDo()">
       Add Todo
     </button>
   </section>
+
   <hr />
-  <section style="height: 50vh" class="overflow-auto">
-    <div *ngFor="let todo of toDos">
-      <p class="p-3 m-0 bg-light border-2 border-bottom border-info">
-        {{ todo }}
-      </p>
-    </div>
-  </section>
+
+  <app-todolist [toDoItems]="toDos"></app-todolist>
 </section>

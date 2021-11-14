@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
 
 @Component({
   selector: 'app-odd-or-even',
@@ -7,24 +7,19 @@ import { Component, OnInit } from '@angular/core';
 })
 export class OddOrEvenComponent implements OnInit {
   numberArray: Array<number> = [];
-
+  value = '';
   constructor() {}
 
   ngOnInit(): void {}
 
-  enterNumber(event: KeyboardEvent) {
-    if (event.key === 'Enter') {
-      this.addNumberToList(
-        +(event.target as HTMLInputElement).value,
-        event.target as HTMLInputElement
-      );
-    }
+  onEnterPress(event: KeyboardEvent) {
+    if (event.key === 'Enter') this.addNumberToList();
   }
 
-  addNumberToList(num: number, input: HTMLInputElement) {
-    if (input.value === '') return;
-    this.numberArray.push(num);
-    input.value = '';
+  addNumberToList() {
+    if (this.value === '') return;
+    this.numberArray.push(+this.value);
+    this.value = '';
   }
 
   clear() {
