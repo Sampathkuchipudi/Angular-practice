@@ -1,8 +1,12 @@
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark mb-3">
   <div class="navbar-collapse">
     <ul class="navbar-nav">
-      <li class="nav-item"><a href="#" class="nav-link">Odd / Even</a></li>
-      <li class="nav-item"><a href="#" class="nav-link">TO-DO</a></li>
+      <li class="nav-item" (click)="navPage(options.ODDOREVEN)">
+        <a href="#" class="nav-link">Odd / Even</a>
+      </li>
+      <li class="nav-item" (click)="navPage(options.TODO)">
+        <a href="#" class="nav-link">TO-DO</a>
+      </li>
     </ul>
   </div>
 </nav>

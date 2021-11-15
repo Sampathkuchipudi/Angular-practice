@@ -1,4 +1,4 @@
-import { Component, ElementRef, ViewChild } from '@angular/core';
+import { Component, ElementRef, Renderer2, ViewChild } from '@angular/core';
 
 @Component({
   selector: 'app-todo',
@@ -10,7 +10,7 @@ export class TodoComponent {
   todoItem: string = '';
 
   // Using Element Ref for Practice
-  @ViewChild('toDoEle', { static: true })
+  @ViewChild('toDoEle')
   inputRef!: ElementRef;
 
   onEnterPress(event: KeyboardEvent) {
@@ -18,9 +18,7 @@ export class TodoComponent {
   }
 
   addToDo() {
-    console.log(this.inputRef.nativeElement);
-
-    if (this.todoItem === '') return;
+    if (this.inputRef.nativeElement.value === '') return;
     this.toDos.push(this.todoItem);
     /**
      * Using this Ref element for practice only
@@ -29,9 +27,9 @@ export class TodoComponent {
      * [Bug**] -> so Adding [this.todoItem = ''] also because of the IF condition.
      * or add this to if condition to work properly or and using ref clear method any one should be fine
      *if (this.todoItem === '' || this.inputRef.nativeElement.value === '') return;
+     // this.todoItem = '';
      *
      */
-    // this.inputRef.nativeElement.value = '';
-    this.todoItem = '';
+    this.inputRef.nativeElement.value = '';
   }
 }

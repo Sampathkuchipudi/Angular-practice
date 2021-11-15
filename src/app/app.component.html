@@ -1,5 +1,10 @@
-<app-navbar></app-navbar>
+<app-navbar (onNavSelect)="intialMenuItem = $event"></app-navbar>
 
-<app-odd-or-even></app-odd-or-even>
-
-<app-todo></app-todo>
+<section>
+  <app-odd-or-even
+    *ngIf="intialMenuItem === options.ODDOREVEN; else toDoTab"
+  ></app-odd-or-even>
+  <ng-template #toDoTab>
+    <app-todo></app-todo>
+  </ng-template>
+</section>
