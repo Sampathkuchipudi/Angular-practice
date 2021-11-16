@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { NavItemOptions } from './models/constants';
+import { NavItemOptions as navOptions } from './models/constants';
 
 @Component({
   selector: 'app-root',
@@ -7,8 +7,8 @@ import { NavItemOptions } from './models/constants';
   styleUrls: ['./app.component.css'],
 })
 export class AppComponent {
-  options = NavItemOptions;
-  
+  options = navOptions;
+
   intialMenuItem: string = this.options.ODDOREVEN;
   constructor() {}
 }

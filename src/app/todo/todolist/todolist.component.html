@@ -1,6 +1,10 @@
 <section style="height: 50vh" class="overflow-auto">
   <div *ngFor="let todo of toDoItems">
-    <p class="p-3 m-0 bg-light border-2 border-bottom border-info">
+    <p
+      basicDirective
+      appHighlighter
+      class="p-3 m-0 border-2 border-bottom border-info"
+    >
       {{ todo }}
     </p>
   </div>

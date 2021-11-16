@@ -8,6 +8,7 @@ import { NavItemOptions } from '../models/constants';
 export class NavbarComponent implements OnInit {
   @Output()
   onNavSelect: EventEmitter<string> = new EventEmitter<string>();
+
   options = NavItemOptions;
 
   constructor() {}
