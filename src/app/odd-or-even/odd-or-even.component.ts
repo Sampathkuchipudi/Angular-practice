@@ -1,14 +1,15 @@
 import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
+import { OddOrEvenService } from '../services/odd-or-even-services/odd-or-even.service';
 
 @Component({
   selector: 'app-odd-or-even',
   templateUrl: './odd-or-even.component.html',
   styleUrls: ['./odd-or-even.component.css'],
+  providers: [OddOrEvenService],
 })
 export class OddOrEvenComponent implements OnInit {
-  numberArray: Array<number> = [];
   value = '';
-  constructor() {}
+  constructor(private _oddOrEvenService: OddOrEvenService) {}
 
   ngOnInit(): void {}
 
@@ -17,12 +18,15 @@ export class OddOrEvenComponent implements OnInit {
   }
 
   addNumberToList() {
-    if (this.value === '') return;
-    this.numberArray.push(+this.value);
+    if (this.value === '') {
+      alert('Please enter a value');
+      return;
+    }
+    this._oddOrEvenService.add(+this.value);
     this.value = '';
   }
 
   clear() {
-    this.numberArray = [];
+    this._oddOrEvenService.deleteAllValues();
   }
 }
