@@ -1,0 +1,62 @@
+<main>
+  <section class="header container mt-5">
+    <h1>Hello World</h1>
+
+    <h4>
+      My First Angular Application with all the concepts that i've learned
+      untill now
+    </h4>
+  </section>
+</main>
+
+<section class="container content mt-4">
+  <hr />
+
+  <h5>Concepts that i've covered untill are the below</h5>
+
+  <section class="cards_m mt-5 mb-5">
+    <div class="card_m">
+      <h4>Basic Concepts</h4>
+      <hr />
+      <!-- <div class="icon-container">
+        <span class="icon-styles">B</span>
+
+      </div> -->
+
+      <ul>
+        <li
+          *ngFor="let concept of basicConcepts"
+          [ngClass]="{ completed: concept.value, pending: !concept.value }"
+        >
+          {{ concept.name }}
+        </li>
+      </ul>
+    </div>
+    <div class="card_m">
+      <h4>InterMediate Concepts</h4>
+      <hr />
+
+      <ul>
+        <li
+          *ngFor="let concept of interMediateConcepts"
+          [ngClass]="{ completed: concept.value, pending: !concept.value }"
+        >
+          {{ concept.name }}
+        </li>
+      </ul>
+    </div>
+    <div class="card_m">
+      <h4>Advanced Concepts</h4>
+      <hr />
+
+      <ul>
+        <li
+          *ngFor="let concept of advancedConcepts"
+          [ngClass]="{ completed: concept.value, pending: !concept.value }"
+        >
+          {{ concept.name }}
+        </li>
+      </ul>
+    </div>
+  </section>
+</section>

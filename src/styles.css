@@ -1,5 +1,17 @@
 /* You can add global styles to this file, and also import other style files */
 
-* {
-  transition: all 0.3s;
+@import url("https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700;900&display=swap");
+
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  transition: all 1s;
+}
+
+html,
+body {
+  font-family: "Lato", sans-serif;
 }
