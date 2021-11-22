@@ -1,4 +1,10 @@
-import { Component, OnInit } from '@angular/core';
+import {
+  AfterViewInit,
+  Component,
+  ElementRef,
+  OnInit,
+  ViewChild,
+} from '@angular/core';
 
 type concepts = { name: string; value: boolean };
 
@@ -7,7 +13,7 @@ type concepts = { name: string; value: boolean };
   templateUrl: './home.component.html',
   styleUrls: ['./home.component.css'],
 })
-export class HomeComponent implements OnInit {
+export class HomeComponent implements OnInit, AfterViewInit {
   basicConcepts: concepts[] = [
     { name: 'Bootstrping Angular App ', value: true },
     { name: 'Data binding', value: true },
@@ -51,6 +57,7 @@ export class HomeComponent implements OnInit {
   ];
 
   constructor() {}
+  ngAfterViewInit(): void {}
 
   ngOnInit(): void {}
 }

@@ -1,0 +1,5 @@
+.back-img {
+  background: #232526; /* fallback for old browsers */
+  background: linear-gradient(to bottom right, #7d7dbd, #14141f);
+  color: #fff;
+}

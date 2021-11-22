@@ -9,12 +9,13 @@ h5 {
   align-items: flex-start;
   justify-content: space-around;
   gap: 2rem;
+  color: #333;
 }
 
 .card_m {
-  padding: 1rem;
+  padding: 1rem 1.5rem;
   width: 300px;
-  background-color: rgb(255, 255, 255);
+  background: #ffffff;
   box-shadow: 0 0 1rem rgba(14, 13, 13, 0.425);
 }
 
@@ -23,12 +24,11 @@ h5 {
 }
 
 .completed {
-  color: rgb(17, 95, 10);
-  text-decoration: line-through;
+  color: #116309;
 }
 
 .pending {
-  color: rgb(219, 125, 17);
+  color: #950404;
 }
 
 @media screen and (max-width: 500px) {

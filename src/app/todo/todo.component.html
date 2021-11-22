@@ -12,7 +12,11 @@
       [(ngModel)]="todoItem"
       (keydown)="onEnterPress($event)"
     />
-    <button appButtonClass class="btn text-nowrap" (click)="addToDo()">
+    <button
+      appButtonClass
+      class="btn btn-secondary text-nowrap"
+      (click)="addToDo()"
+    >
       Add Todo
     </button>
   </section>
